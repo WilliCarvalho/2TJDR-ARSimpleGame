@@ -1,0 +1,34 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Behaviours",
+            "id": "fb1d889d-e378-4e98-9653-41bd05e13642",
+            "actions": [
+                {
+                    "name": "Firing",
+                    "type": "Button",
+                    "id": "308b3fdc-802f-4e4e-bf9a-89f0a914a498",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7976dec9-2f0b-4954-910d-96f2a7a87789",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Firing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
