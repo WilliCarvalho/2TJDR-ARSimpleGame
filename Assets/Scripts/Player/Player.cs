@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private PlayerControls inputs;
     public static Player instance;
+    private PlayerControls inputs;
+    private int lifes = 3;
 
     [SerializeField] private Projectile projectile;
     [SerializeField] private Transform shootPos;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
 
     private void ShootHandler()
     {
-        GameObject projectile = Instantiate(this.projectile.gameObject, shootPos.position, Quaternion.identity);
+        Instantiate(this.projectile.gameObject, shootPos.position, shootPos.rotation);
     }
 
     private void CheckInstance()
@@ -48,7 +49,18 @@ public class Player : MonoBehaviour
 
     public void TakeDamage()
     {
-        print("Ouch! It hurts");
+        lifes--;
+        GameManager.instance.LoseLife(lifes);
+        if (lifes <= 0)
+        {
+            TurnOffInputs();
+        }
+        print("Player took damage");
+    }
+
+    private void TurnOffInputs()
+    {
+        inputs.Disable();
     }
 
     private void OnEnable()

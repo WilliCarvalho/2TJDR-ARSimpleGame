@@ -48,6 +48,8 @@ public class EnemyBheavior : MonoBehaviour
         {
             Destroy(other.gameObject);
             canWalk = false;
+            enemyRigidbody.velocity = Vector3.zero;
+            GameManager.instance.IncreaseScore();
             Die();
         }
 
